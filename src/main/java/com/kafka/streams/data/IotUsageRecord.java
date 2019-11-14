@@ -11,17 +11,13 @@ public class IotUsageRecord {
     private String deviceSerialNumber;
 
     @JsonProperty("download_bytes")
-    private Long downloadBytes;
+    private long downloadBytes;
 
     @JsonProperty("upload_bytes")
-    private Long uploadBytes;
+    private long uploadBytes;
 
     @JsonProperty("session_start_time")
     private Long sessionStartTimeMs;
-
-    public IotUsageRecord() {
-        this.id = UUID.randomUUID();
-    }
 
     public UUID getId() {
         return id;

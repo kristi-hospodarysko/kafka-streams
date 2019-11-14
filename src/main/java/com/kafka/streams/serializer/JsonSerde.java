@@ -2,7 +2,6 @@ package com.kafka.streams.serializer;
 
 import java.util.Map;
 
-import com.kafka.streams.data.AggregatedReport;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serializer;
@@ -28,10 +27,5 @@ public class JsonSerde<T> implements Serde<T> {
         return new JsonDeserializer<>(tClass);
     }
 
-    public static class AggregatedReportSerge extends JsonSerde<AggregatedReport>{
-        public AggregatedReportSerge() {
-            super(AggregatedReport.class);
-        }
-    }
 }
 

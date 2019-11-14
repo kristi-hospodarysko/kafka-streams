@@ -13,10 +13,6 @@ public class IotDevice {
     @JsonProperty("account_sn")
     private String accountSerialNumber;
 
-    public IotDevice() {
-        this.id = UUID.randomUUID();
-    }
-
     public UUID getId() {
         return id;
     }

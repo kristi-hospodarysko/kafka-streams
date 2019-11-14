@@ -13,10 +13,10 @@ public class AggregatedReport {
     private String periodEnd;
 
     @JsonProperty("download_bytes")
-    private Long downloadBytes;
+    private long downloadBytes;
 
     @JsonProperty("upload_bytes")
-    private Long uploadBytes;
+    private long uploadBytes;
 
     public String getAccountSerialNumber() {
         return accountSerialNumber;
@@ -58,7 +58,8 @@ public class AggregatedReport {
         this.uploadBytes = uploadBytes;
     }
 
-    public AggregatedReport addBytes(IotJoinedRecord record) {
+    public AggregatedReport addBytes(AggregatedReport record) {
+        this.accountSerialNumber = record.accountSerialNumber;
         this.downloadBytes = this.downloadBytes + record.getDownloadBytes();
         this.uploadBytes = this.uploadBytes + record.getUploadBytes();
         return this;
